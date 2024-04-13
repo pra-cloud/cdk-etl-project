@@ -1,0 +1,76 @@
+from constructs import Construct
+
+from aws_cdk import (
+    Duration,
+    Stack,
+    aws_s3 as s3,
+    aws_glue as glue,
+    aws_lambda as lambda_,
+    aws_events as events,
+    aws_events_targets as targets,
+    aws_redshift as redshift,
+    pipelines,
+    aws_codepipeline as codepipeline,
+    aws_codepipeline_actions as codepipeline_actions,
+    aws_iam as iam
+
+)
+
+
+
+class SecondStack(Stack):
+    def __init__(self, scope: Construct, construct_id: str, glue_role_arn: str, **kwargs) -> None:
+        super().__init__(scope, construct_id, **kwargs)
+        
+
+        s3_role_arn = "arn:aws:iam::851725461271:role/s3_full_access"
+
+        s3_role = iam.Role(
+        self, "S3FullAccessRole",
+        assumed_by=iam.AccountRootPrincipal(),
+        role_name="S3FullAccessRole"
+        )
+
+        # Attach the necessary policies to the role
+        s3_role.add_managed_policy(
+            iam.ManagedPolicy.from_aws_managed_policy_name("AmazonS3FullAccess")
+        )
+
+        
+        artifact_bucket = s3.Bucket(self, "ArtifactBucket11042024")
+
+        #artifact_bucket = s3.Bucket(self, "ArtifactBucket11042024")
+
+        git_input = pipelines.CodePipelineSource.connection(
+            repo_string="pra-cloud/csv-etl",
+            branch="main",
+            connection_arn="arn:aws:codestar-connections:us-east-1:851725461271:connection/f40482c7-d76b-49bc-835c-aae1c1d1fdf2"
+        )
+
+        code_pipeline = codepipeline.Pipeline(
+            self, "Pipeline",
+            pipeline_name="etl-pipeline",
+            cross_account_keys=False
+            role=s3_role
+        )
+
+        synth_step = pipelines.ShellStep(
+            #s3_role_arn,
+            id="Synth",
+            install_commands=[
+                'ls -la'
+            ],
+            commands=[
+                f"aws s3 sync . s3://{artifact_bucket.bucket_name}"
+            ],
+            input=git_input
+        )
+
+    
+        pipeline = pipelines.CodePipeline(
+            self, 'CodePipeline',
+            self_mutation=True,
+            code_pipeline=code_pipeline,
+            #role=s3_role,
+            synth=synth_step
+        )

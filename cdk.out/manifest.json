@@ -1,0 +1,413 @@
+{
+  "version": "36.0.0",
+  "artifacts": {
+    "ProjectCdkStack.assets": {
+      "type": "cdk:asset-manifest",
+      "properties": {
+        "file": "ProjectCdkStack.assets.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+      }
+    },
+    "ProjectCdkStack": {
+      "type": "aws:cloudformation:stack",
+      "environment": "aws://unknown-account/unknown-region",
+      "properties": {
+        "templateFile": "ProjectCdkStack.template.json",
+        "terminationProtection": false,
+        "validateOnSynth": false,
+        "assumeRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-deploy-role-${AWS::AccountId}-${AWS::Region}",
+        "cloudFormationExecutionRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-cfn-exec-role-${AWS::AccountId}-${AWS::Region}",
+        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/f55e581df16588612b8a89afbc763659fa8fab1eb3ee527c8d38aed3842cbeaa.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version",
+        "additionalDependencies": [
+          "ProjectCdkStack.assets"
+        ],
+        "lookupRole": {
+          "arn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-lookup-role-${AWS::AccountId}-${AWS::Region}",
+          "requiresBootstrapStackVersion": 8,
+          "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+        }
+      },
+      "dependencies": [
+        "ProjectCdkStack.assets"
+      ],
+      "metadata": {
+        "/ProjectCdkStack/Bucket10902024/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Bucket10902024EEF8C81C"
+          }
+        ],
+        "/ProjectCdkStack/Bucket10902024/Notifications/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Bucket10902024Notifications2BB34059"
+          }
+        ],
+        "/ProjectCdkStack/Bucket10902024/AllowBucketNotificationsToProjectCdkStackThreeCrawlerTrigger6922DD83": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Bucket10902024AllowBucketNotificationsToProjectCdkStackThreeCrawlerTrigger6922DD836FDBEA75"
+          }
+        ],
+        "/ProjectCdkStack/Bucket20480987/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Bucket2048098719AE409D"
+          }
+        ],
+        "/ProjectCdkStack/Bucket20480987/Notifications/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Bucket20480987NotificationsC855C8B2"
+          }
+        ],
+        "/ProjectCdkStack/Bucket20480987/AllowBucketNotificationsToProjectCdkStackThreeCrawlerTrigger6922DD83": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Bucket20480987AllowBucketNotificationsToProjectCdkStackThreeCrawlerTrigger6922DD83367B4705"
+          }
+        ],
+        "/ProjectCdkStack/Bucket334827493e3/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Bucket334827493e312748E54"
+          }
+        ],
+        "/ProjectCdkStack/Bucket334827493e3/Notifications/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Bucket334827493e3Notifications3A4EE058"
+          }
+        ],
+        "/ProjectCdkStack/Bucket334827493e3/AllowBucketNotificationsToProjectCdkStackThreeCrawlerTrigger6922DD83": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Bucket334827493e3AllowBucketNotificationsToProjectCdkStackThreeCrawlerTrigger6922DD837049F52B"
+          }
+        ],
+        "/ProjectCdkStack/TaskPipeline/ArtifactsBucket/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "TaskPipelineArtifactsBucket80AE936B"
+          }
+        ],
+        "/ProjectCdkStack/TaskPipeline/ArtifactsBucket/Policy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "TaskPipelineArtifactsBucketPolicyEB46B97C"
+          }
+        ],
+        "/ProjectCdkStack/TaskPipeline/Role/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "TaskPipelineRoleDB4B4015"
+          }
+        ],
+        "/ProjectCdkStack/TaskPipeline/Role/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "TaskPipelineRoleDefaultPolicy77C91F69"
+          }
+        ],
+        "/ProjectCdkStack/TaskPipeline/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "TaskPipelineC912816C"
+          }
+        ],
+        "/ProjectCdkStack/TaskPipeline/Source/github_Source/CodePipelineActionRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "TaskPipelineSourcegithubSourceCodePipelineActionRole15C00E61"
+          }
+        ],
+        "/ProjectCdkStack/TaskPipeline/Source/github_Source/CodePipelineActionRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "TaskPipelineSourcegithubSourceCodePipelineActionRoleDefaultPolicy02A4B4DA"
+          }
+        ],
+        "/ProjectCdkStack/TaskPipeline/Deploy/DeployAction/CodePipelineActionRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "TaskPipelineDeployDeployActionCodePipelineActionRole3EA8A2A0"
+          }
+        ],
+        "/ProjectCdkStack/TaskPipeline/Deploy/DeployAction/CodePipelineActionRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "TaskPipelineDeployDeployActionCodePipelineActionRoleDefaultPolicyA8C7E2BD"
+          }
+        ],
+        "/ProjectCdkStack/LeadPipeline/ArtifactsBucket/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "LeadPipelineArtifactsBucketB4256A4C"
+          }
+        ],
+        "/ProjectCdkStack/LeadPipeline/ArtifactsBucket/Policy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "LeadPipelineArtifactsBucketPolicy3D1AD521"
+          }
+        ],
+        "/ProjectCdkStack/LeadPipeline/Role/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "LeadPipelineRole4EA32A31"
+          }
+        ],
+        "/ProjectCdkStack/LeadPipeline/Role/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "LeadPipelineRoleDefaultPolicyACD9DF1B"
+          }
+        ],
+        "/ProjectCdkStack/LeadPipeline/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "LeadPipeline80C979A2"
+          }
+        ],
+        "/ProjectCdkStack/LeadPipeline/Source/github_Source/CodePipelineActionRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "LeadPipelineSourcegithubSourceCodePipelineActionRole0DFF0680"
+          }
+        ],
+        "/ProjectCdkStack/LeadPipeline/Source/github_Source/CodePipelineActionRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "LeadPipelineSourcegithubSourceCodePipelineActionRoleDefaultPolicy66A65322"
+          }
+        ],
+        "/ProjectCdkStack/LeadPipeline/Deploy/DeployAction/CodePipelineActionRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "LeadPipelineDeployDeployActionCodePipelineActionRole45056548"
+          }
+        ],
+        "/ProjectCdkStack/LeadPipeline/Deploy/DeployAction/CodePipelineActionRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "LeadPipelineDeployDeployActionCodePipelineActionRoleDefaultPolicy706D09BA"
+          }
+        ],
+        "/ProjectCdkStack/ActivityPipeline/ArtifactsBucket/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ActivityPipelineArtifactsBucketF4A79E14"
+          }
+        ],
+        "/ProjectCdkStack/ActivityPipeline/ArtifactsBucket/Policy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ActivityPipelineArtifactsBucketPolicy1877CA9C"
+          }
+        ],
+        "/ProjectCdkStack/ActivityPipeline/Role/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ActivityPipelineRole0642541E"
+          }
+        ],
+        "/ProjectCdkStack/ActivityPipeline/Role/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ActivityPipelineRoleDefaultPolicy00D61DF5"
+          }
+        ],
+        "/ProjectCdkStack/ActivityPipeline/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ActivityPipeline932C6EF0"
+          }
+        ],
+        "/ProjectCdkStack/ActivityPipeline/Source/github_Source/CodePipelineActionRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ActivityPipelineSourcegithubSourceCodePipelineActionRole271F0F05"
+          }
+        ],
+        "/ProjectCdkStack/ActivityPipeline/Source/github_Source/CodePipelineActionRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ActivityPipelineSourcegithubSourceCodePipelineActionRoleDefaultPolicyC6285856"
+          }
+        ],
+        "/ProjectCdkStack/ActivityPipeline/Deploy/DeployAction/CodePipelineActionRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ActivityPipelineDeployDeployActionCodePipelineActionRole4BF34F1F"
+          }
+        ],
+        "/ProjectCdkStack/ActivityPipeline/Deploy/DeployAction/CodePipelineActionRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ActivityPipelineDeployDeployActionCodePipelineActionRoleDefaultPolicyBCA01AEF"
+          }
+        ],
+        "/ProjectCdkStack/ThreeCrawlerTrigger/ServiceRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ThreeCrawlerTriggerServiceRole417FD31C"
+          }
+        ],
+        "/ProjectCdkStack/ThreeCrawlerTrigger/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ThreeCrawlerTrigger0A2F6F21"
+          }
+        ],
+        "/ProjectCdkStack/BucketNotificationsHandler050a0587b7544547bf325f094a3db834/Role/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "BucketNotificationsHandler050a0587b7544547bf325f094a3db834RoleB6FB88EC"
+          }
+        ],
+        "/ProjectCdkStack/BucketNotificationsHandler050a0587b7544547bf325f094a3db834/Role/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "BucketNotificationsHandler050a0587b7544547bf325f094a3db834RoleDefaultPolicy2CF63D36"
+          }
+        ],
+        "/ProjectCdkStack/BucketNotificationsHandler050a0587b7544547bf325f094a3db834/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "BucketNotificationsHandler050a0587b7544547bf325f094a3db8347ECC3691"
+          }
+        ],
+        "/ProjectCdkStack/SecondLambdaFunction/ServiceRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SecondLambdaFunctionServiceRole7D0A5CE5"
+          }
+        ],
+        "/ProjectCdkStack/SecondLambdaFunction/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SecondLambdaFunction5456D34E"
+          }
+        ],
+        "/ProjectCdkStack/MyGlueDatabase1": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MyGlueDatabase1"
+          }
+        ],
+        "/ProjectCdkStack/LeadCrawler": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "LeadCrawler"
+          }
+        ],
+        "/ProjectCdkStack/MyGlueDatabase2": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MyGlueDatabase2"
+          }
+        ],
+        "/ProjectCdkStack/ActivityCrawler": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ActivityCrawler"
+          }
+        ],
+        "/ProjectCdkStack/MyGlueDatabase3": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MyGlueDatabase3"
+          }
+        ],
+        "/ProjectCdkStack/TaskCrawler": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "TaskCrawler"
+          }
+        ],
+        "/ProjectCdkStack/LeadCrawlerRule/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "LeadCrawlerRuleACD906E2"
+          }
+        ],
+        "/ProjectCdkStack/LeadCrawlerRule/AllowEventRuleProjectCdkStackSecondLambdaFunctionC0979C8F": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "LeadCrawlerRuleAllowEventRuleProjectCdkStackSecondLambdaFunctionC0979C8F5FD4093F"
+          }
+        ],
+        "/ProjectCdkStack/ActivityCrawlerRule/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ActivityCrawlerRuleF94ADE25"
+          }
+        ],
+        "/ProjectCdkStack/ActivityCrawlerRule/AllowEventRuleProjectCdkStackSecondLambdaFunctionC0979C8F": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ActivityCrawlerRuleAllowEventRuleProjectCdkStackSecondLambdaFunctionC0979C8FAADD09FE"
+          }
+        ],
+        "/ProjectCdkStack/TaskCrawlerRule/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "TaskCrawlerRule37CB89DC"
+          }
+        ],
+        "/ProjectCdkStack/TaskCrawlerRule/AllowEventRuleProjectCdkStackSecondLambdaFunctionC0979C8F": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "TaskCrawlerRuleAllowEventRuleProjectCdkStackSecondLambdaFunctionC0979C8F46897566"
+          }
+        ],
+        "/ProjectCdkStack/RedshiftCluster": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "RedshiftCluster"
+          }
+        ],
+        "/ProjectCdkStack/MyCfnJob": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MyCfnJob"
+          }
+        ],
+        "/ProjectCdkStack/CDKMetadata/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadata"
+          }
+        ],
+        "/ProjectCdkStack/CDKMetadata/Condition": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadataAvailable"
+          }
+        ],
+        "/ProjectCdkStack/BootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "BootstrapVersion"
+          }
+        ],
+        "/ProjectCdkStack/CheckBootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CheckBootstrapVersion"
+          }
+        ]
+      },
+      "displayName": "ProjectCdkStack"
+    },
+    "Tree": {
+      "type": "cdk:tree",
+      "properties": {
+        "file": "tree.json"
+      }
+    }
+  }
+}
